@@ -8,11 +8,13 @@ export const AddItem = () => {
   const dispatch = useDispatch();
 
   const handleNewTask = () => {
-    dispatch(add({ task: newTask }));
-    setNewTask("");
+    if (newTask.length != 0) {
+      dispatch(add({ task: newTask }));
+      setNewTask("");
+    }
   };
   return (
-    <Stack alignItems="center" sx={{ margin: "10px 0" }}>
+    <Stack alignItems="center" sx={{ margin: "10px 0" }} >
       <Box sx={{ width: "50%", display: "flex" }}>
         <Button
           variant="contained"
@@ -27,6 +29,7 @@ export const AddItem = () => {
           placeholder="Add Todo..."
           onChange={(e) => setNewTask(e.target.value)}
           value={newTask}
+          autoComplete="off"
         ></TextField>
       </Box>
     </Stack>

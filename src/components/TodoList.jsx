@@ -5,7 +5,6 @@ import { useSelector } from "react-redux";
 
 export const TodoList = () => {
   const tasks = useSelector((state) => state.todos);
-  console.log("tasks===>>>", tasks);
   return (
     <Stack alignItems="center">
       <Stack

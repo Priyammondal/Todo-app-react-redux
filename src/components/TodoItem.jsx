@@ -68,7 +68,7 @@ const TodoItem = ({ id, task, completed }) => {
           sx={{ width: "100%", display: "flex", alignItems: "center" }}
           variant="outlined"
         >
-          <Checkbox size="medium" onChange={handleCompleted} />
+          <Checkbox size="medium" onChange={handleCompleted} checked={completed}/>
           <Typography variant="h6" sx={{ flex: 4, pl: 1 }}>
             {task}
           </Typography>
